@@ -4,4 +4,8 @@ export class Feature {
 		return true;
 	}
 
+	variant() {
+		return 'control';
+	}
+
 }
