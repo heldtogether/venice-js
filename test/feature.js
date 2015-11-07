@@ -1,6 +1,8 @@
 import { assert } from "chai"
 import { Feature } from "../src/feature.js"
 
+var sinon = require("sinon");
+
 describe("Feature", () => {
 
 	it('can create', () => {
@@ -13,9 +15,18 @@ describe("Feature", () => {
 		assert.isTrue(feature.active());
 	});
 
-	it('returns control variant by default', () => {
-		var feature = new Feature;
-		assert.equal(feature.variant(), 'control');
+	it('requests the variant from the bucketer', () => {
+		var bucketer = { variant: function () {} };
+
+		var variant = 'control';
+
+		var mock = sinon.mock(bucketer);
+		mock.expects("variant").once().returns(variant);
+
+		var feature = new Feature(bucketer);
+
+		assert.equal(feature.variant(), variant);
+		mock.verify();
 	});
 
 })
