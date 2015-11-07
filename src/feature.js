@@ -1,7 +1,7 @@
 export class Feature {
 
 	active() {
-		return false;
+		return true;
 	}
 
 }

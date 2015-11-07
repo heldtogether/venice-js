@@ -10,7 +10,7 @@ describe("Feature", () => {
 
 	it('can check if active', () => {
 		var feature = new Feature;
-		assert.isFalse(feature.active());
+		assert.isTrue(feature.active());
 	});
 
 })
