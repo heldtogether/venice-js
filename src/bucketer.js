@@ -14,6 +14,8 @@ export class Bucketer {
 			var random = Math.random();
 			var index = Math.floor(((random * 10) - 0.1) / (limit * 10));
 			variant = this.variants[index];
+
+			this.session.setVariant(this.experiment, variant);
 		}
 
 		return variant;
