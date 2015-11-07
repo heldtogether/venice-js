@@ -13,4 +13,9 @@ describe("Feature", () => {
 		assert.isTrue(feature.active());
 	});
 
+	it('returns control variant by default', () => {
+		var feature = new Feature;
+		assert.equal(feature.variant(), 'control');
+	});
+
 })
