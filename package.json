@@ -1,0 +1,31 @@
+{
+  "name": "variants",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel/register",
+    "watch-tests": "./node_modules/watch/cli.js 'npm test' -d -u",
+    "build": "browserify ./src/**/*.js -t babelify -o ./main.js",
+    "watch": "watchify ./src/**/*.js -t babelify -o ./main.js -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:heldtogether/variants.git"
+  },
+  "author": "Josh Sephton",
+  "license": "Apache",
+  "bugs": {
+    "url": "https://github.com/heldtogether/variants/issues"
+  },
+  "homepage": "https://github.com/heldtogether/variants",
+  "devDependencies": {
+    "babel": "^5.8.26",
+    "babelify": "^6.3.0",
+    "browserify": "^11.2.0",
+    "chai": "^3.4.0",
+    "mocha": "^2.3.3",
+    "watchify": "3.4.0",
+    "watch": "^0.16.0"
+  }
+}
