@@ -26,7 +26,7 @@ describe("Bucketer", () => {
 	});
 
 	it('assigns to bucket if not already bucketed (control)', () => {
-		var session = { variant: function () {} };
+		var session = { variant: function () {}, setVariant: function () {} };
 
 		var experiment = 'experiment-1';
 		var variant = 'control';
@@ -34,6 +34,7 @@ describe("Bucketer", () => {
 
 		var mock = sinon.mock(session);
 		mock.expects("variant").withArgs(experiment).once().returns(false);
+		mock.expects("setVariant").withArgs(experiment, variant).once();
 
 		var stub = sinon.stub(Math, 'random');
 		stub.returns(0.2);
@@ -47,7 +48,7 @@ describe("Bucketer", () => {
 	});
 
 	it('assigns to bucket if not already bucketed (variant-1)', () => {
-		var session = { variant: function () {} };
+		var session = { variant: function () {}, setVariant: function () {} };
 
 		var experiment = 'experiment-1';
 		var variant = 'variant-1';
@@ -55,6 +56,7 @@ describe("Bucketer", () => {
 
 		var mock = sinon.mock(session);
 		mock.expects("variant").withArgs(experiment).once().returns(false);
+		mock.expects("setVariant").withArgs(experiment, variant).once();
 
 		var stub = sinon.stub(Math, 'random');
 		stub.returns(0.5);
@@ -68,7 +70,7 @@ describe("Bucketer", () => {
 	});
 
 	it('assigns to bucket if not already bucketed (variant-2)', () => {
-		var session = { variant: function () {} };
+		var session = { variant: function () {}, setVariant: function () {} };
 
 		var experiment = 'experiment-1';
 		var variant = 'variant-2';
@@ -76,6 +78,7 @@ describe("Bucketer", () => {
 
 		var mock = sinon.mock(session);
 		mock.expects("variant").withArgs(experiment).once().returns(false);
+		mock.expects("setVariant").withArgs(experiment, variant).once();
 
 		var stub = sinon.stub(Math, 'random');
 		stub.returns(0.8);
