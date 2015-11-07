@@ -1,11 +1,15 @@
 export class Feature {
 
+	constructor(bucketer) {
+		this.bucketer = bucketer;
+	}
+
 	active() {
 		return true;
 	}
 
 	variant() {
-		return 'control';
+		return this.bucketer.variant();
 	}
 
 }
