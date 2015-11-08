@@ -13,4 +13,15 @@ describe("Manager", () => {
 		assert.equal(manager.get('experiment-1'), undefined);
 	});
 
+	it('can set feature', () => {
+		var experiment = 'experiment-1';
+
+		var feature = {};
+
+		var manager = new Manager;
+		manager.set(experiment, feature)
+
+		assert.equal(manager.get(experiment), feature);
+	});
+
 })
