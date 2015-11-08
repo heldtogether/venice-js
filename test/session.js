@@ -17,6 +17,8 @@ describe("Session", () => {
 
 		var session = new Session;
 		assert.isUndefined(session.variant('experiment-1'));
+
+		mock.verify();
 	});
 
 	it('saves the variant to a cookie', () => {
@@ -28,6 +30,8 @@ describe("Session", () => {
 
 		var session = new Session;
 		session.setVariant(experiment, variant);
+
+		mock.verify();
 	});
 
 })
