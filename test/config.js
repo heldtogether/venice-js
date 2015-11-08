@@ -26,4 +26,17 @@ describe("Config", () => {
 		assert.equal(config._definition, definition);
 	});
 
+	it('calls the factory for each of the rules', () => {
+		var factory = { create: function () {} };
+
+		var mock = sinon.mock(factory);
+		mock.expects("create").once().withArgs(definition['experiment-1']);
+
+		var config = new Config(factory);
+		config.setDefintion(definition);
+		config.rules();
+
+		mock.verify();
+	});
+
 });
