@@ -5,7 +5,7 @@
 
 	{
 		"experiment-1": {
-			"reach": 0.1,
+			"type": "variant",
 			"variants": [
 				"control",
 				"variant-a"
