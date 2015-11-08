@@ -1,18 +1,18 @@
 export class Config {
 
 	constructor(factory) {
-		this._definition = {};
+		this.definition = {};
 		this.factory = factory;
 	}
 
 	setDefintion(definition) {
-		this._definition = definition;
+		this.definition = definition;
 	}
 
 	rules() {
 		var rules = {};
-		for (var feature in this._definition) {
-			rules[feature] = this.factory.create(this._definition[feature]);
+		for (var feature in this.definition) {
+			rules[feature] = this.factory.create(this.definition[feature]);
 		}
 		return rules;
 	}

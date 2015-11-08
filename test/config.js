@@ -23,7 +23,7 @@ describe("Config", () => {
 	it('can set definition', () => {
 		var config = new Config;
 		config.setDefintion(definition);
-		assert.equal(config._definition, definition);
+		assert.equal(config.definition, definition);
 	});
 
 	it('calls the factory for each of the rules', () => {

@@ -1,34 +1,34 @@
 export class Manager {
 
 	constructor() {
-		this._config = [];
-		this._loadedConfig = false;
-		this._features = {};
+		this.config = [];
+		this.loadedConfig = false;
+		this.features = {};
 	}
 
 	addConfig(config) {
-		this._config.push(config);
-		this._loadedConfig = false;
+		this.config.push(config);
+		this.loadedConfig = false;
 	}
 
 	get(name) {
-		this._loadConfig();
-		return this._features[name];
+		this.loadConfig();
+		return this.features[name];
 	}
 
 	set(name, feature) {
-		this._loadConfig();
-		this._features[name] = feature;
+		this.loadConfig();
+		this.features[name] = feature;
 	}
 
-	_loadConfig() {
-		if (this._config.length !== 0 && !this._loadedConfig) {
-			this._features = {};
-			this._loadedConfig = true;
-			for (var i = 0; i < this._config.length; i++) {
-				var rules = this._config[i].rules();
+	loadConfig() {
+		if (this.config.length !== 0 && !this.loadedConfig) {
+			this.features = {};
+			this.loadedConfig = true;
+			for (var i = 0; i < this.config.length; i++) {
+				var rules = this.config[i].rules();
 				if (rules) {
-					for (rule in rules) {
+					for (var rule in rules) {
 						this.set(rule, rules[rule]);
 					}
 				}
