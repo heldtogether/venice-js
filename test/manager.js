@@ -1,9 +1,9 @@
-import { assert } from "chai"
-import { Manager } from "../src/manager.js"
+import { assert } from 'chai'
+import { Manager } from '../src/manager.js'
 
-var sinon = require("sinon");
+var sinon = require('sinon');
 
-describe("Manager", () => {
+describe('Manager', () => {
 
 	it('can create', () => {
 		var manager = new Manager;
@@ -31,10 +31,10 @@ describe("Manager", () => {
 		var config2 = { rules: function () {} }
 
 		var mock1 = sinon.mock(config1);
-		mock1.expects("rules").once();
+		mock1.expects('rules').once();
 
 		var mock2 = sinon.mock(config2);
-		mock2.expects("rules").once();
+		mock2.expects('rules').once();
 
 		var manager = new Manager();
 		manager.addConfig(config1);

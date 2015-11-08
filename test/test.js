@@ -1,7 +1,7 @@
-import { assert } from "chai"
+import { assert } from 'chai'
 
 
-describe("Test Platform", () => {
+describe('Test Platform', () => {
 
 	it('works', () => {
 		assert.isTrue(true);

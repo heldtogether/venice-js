@@ -1,9 +1,9 @@
-import { assert } from "chai"
-import { Bucketer } from "../src/bucketer.js"
+import { assert } from 'chai'
+import { Bucketer } from '../src/bucketer.js'
 
-var sinon = require("sinon");
+var sinon = require('sinon');
 
-describe("Bucketer", () => {
+describe('Bucketer', () => {
 
 	it('can create', () => {
 		var bucketer = new Bucketer;
@@ -17,7 +17,7 @@ describe("Bucketer", () => {
 		var variant = 'control';
 
 		var mock = sinon.mock(session);
-		mock.expects("variant").withArgs(experiment).once().returns(variant);
+		mock.expects('variant').withArgs(experiment).once().returns(variant);
 
 		var bucketer = new Bucketer(experiment, [], session);
 		assert.equal(bucketer.variant(), variant);
@@ -33,8 +33,8 @@ describe("Bucketer", () => {
 		var variants = ['control', 'variant-1', 'variant-2'];
 
 		var mock = sinon.mock(session);
-		mock.expects("variant").withArgs(experiment).once().returns(false);
-		mock.expects("setVariant").withArgs(experiment, variant).once();
+		mock.expects('variant').withArgs(experiment).once().returns(false);
+		mock.expects('setVariant').withArgs(experiment, variant).once();
 
 		var stub = sinon.stub(Math, 'random');
 		stub.returns(0.2);
@@ -55,8 +55,8 @@ describe("Bucketer", () => {
 		var variants = ['control', 'variant-1', 'variant-2'];
 
 		var mock = sinon.mock(session);
-		mock.expects("variant").withArgs(experiment).once().returns(false);
-		mock.expects("setVariant").withArgs(experiment, variant).once();
+		mock.expects('variant').withArgs(experiment).once().returns(false);
+		mock.expects('setVariant').withArgs(experiment, variant).once();
 
 		var stub = sinon.stub(Math, 'random');
 		stub.returns(0.5);
@@ -77,8 +77,8 @@ describe("Bucketer", () => {
 		var variants = ['control', 'variant-1', 'variant-2'];
 
 		var mock = sinon.mock(session);
-		mock.expects("variant").withArgs(experiment).once().returns(false);
-		mock.expects("setVariant").withArgs(experiment, variant).once();
+		mock.expects('variant').withArgs(experiment).once().returns(false);
+		mock.expects('setVariant').withArgs(experiment, variant).once();
 
 		var stub = sinon.stub(Math, 'random');
 		stub.returns(0.8);

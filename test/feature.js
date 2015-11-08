@@ -1,9 +1,9 @@
-import { assert } from "chai"
-import { Feature } from "../src/feature.js"
+import { assert } from 'chai'
+import { Feature } from '../src/feature.js'
 
-var sinon = require("sinon");
+var sinon = require('sinon');
 
-describe("Feature", () => {
+describe('Feature', () => {
 
 	it('can create', () => {
 		var feature = new Feature;
@@ -21,7 +21,7 @@ describe("Feature", () => {
 		var variant = 'control';
 
 		var mock = sinon.mock(bucketer);
-		mock.expects("variant").once().returns(variant);
+		mock.expects('variant').once().returns(variant);
 
 		var feature = new Feature(bucketer);
 

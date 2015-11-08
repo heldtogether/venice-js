@@ -1,16 +1,16 @@
-import { assert } from "chai"
-import { Factory } from "../src/factory.js"
-import { Feature } from "../src/feature.js"
+import { assert } from 'chai'
+import { Factory } from '../src/factory.js'
+import { Feature } from '../src/feature.js'
 
 var definition = {
-	"type": "variant",
-	"variants": [
-		"control",
-		"variant-1"
+	'type': 'variant',
+	'variants': [
+		'control',
+		'variant-1'
 	]
 };
 
-describe("Factory", () => {
+describe('Factory', () => {
 
 	it('can create', () => {
 		var factory = new Factory;

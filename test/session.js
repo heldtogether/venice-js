@@ -1,10 +1,10 @@
-import { assert } from "chai"
-import { Session } from "../src/session.js"
+import { assert } from 'chai'
+import { Session } from '../src/session.js'
 
 var Cookie = require('js-cookie');
-var sinon = require("sinon");
+var sinon = require('sinon');
 
-describe("Session", () => {
+describe('Session', () => {
 
 	it('can create', () => {
 		var session = new Session;
@@ -13,7 +13,7 @@ describe("Session", () => {
 
 	it('reads the saved variant from a cookie', () => {
 		var mock = sinon.mock(Cookie);
-		mock.expects("get").once().returns(undefined);
+		mock.expects('get').once().returns(undefined);
 
 		var session = new Session;
 		assert.isUndefined(session.variant('experiment-1'));
@@ -26,7 +26,7 @@ describe("Session", () => {
 		var variant = 'variant-1';
 
 		var mock = sinon.mock(Cookie);
-		mock.expects("set").once().withArgs(experiment, variant);
+		mock.expects('set').once().withArgs(experiment, variant);
 
 		var session = new Session;
 		session.setVariant(experiment, variant);

@@ -1,6 +1,6 @@
-import { Bucketer } from "../src/bucketer.js"
-import { Feature } from "../src/feature.js"
-import { Session } from "../src/session.js"
+import { Bucketer } from '../src/bucketer.js'
+import { Feature } from '../src/feature.js'
+import { Session } from '../src/session.js'
 
 export class Factory {
 

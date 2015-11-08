@@ -1,19 +1,19 @@
-import { assert } from "chai"
-import { Config } from "../src/config.js"
+import { assert } from 'chai'
+import { Config } from '../src/config.js'
 
-var sinon = require("sinon");
+var sinon = require('sinon');
 
 var definition = {
-	"experiment-1": {
-		"type": "variant",
-		"variants": [
-			"control",
-			"variant-1"
+	'experiment-1': {
+		'type': 'variant',
+		'variants': [
+			'control',
+			'variant-1'
 		]
 	}
 };
 
-describe("Config", () => {
+describe('Config', () => {
 
 	it('can create', () => {
 		var config = new Config;
@@ -30,7 +30,7 @@ describe("Config", () => {
 		var factory = { create: function () {} };
 
 		var mock = sinon.mock(factory);
-		mock.expects("create").once().withArgs(definition['experiment-1']);
+		mock.expects('create').once().withArgs(definition['experiment-1']);
 
 		var config = new Config(factory);
 		config.setDefintion(definition);
