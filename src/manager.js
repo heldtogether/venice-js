@@ -1,7 +1,15 @@
 export class Manager {
 
-	get(feature) {
-		return undefined;
+	constructor() {
+		this._features = {};
+	}
+
+	get(name) {
+		return this._features[name];
+	}
+
+	set(name, feature) {
+		this._features[name] = feature;
 	}
 
 }
