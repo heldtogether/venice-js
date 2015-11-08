@@ -8,4 +8,9 @@ describe("Manager", () => {
 		assert.instanceOf(manager, Manager);
 	});
 
+	it('can get feature', () => {
+		var manager = new Manager;
+		assert.equal(manager.get('experiment-1'), undefined);
+	});
+
 })
