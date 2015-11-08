@@ -12,23 +12,22 @@ describe("Session", () => {
 	});
 
 	it('reads the saved variant from a cookie', () => {
-		var stub = sinon.stub(Cookie, 'get');
-		stub.returns(undefined);
+		var mock = sinon.mock(Cookie);
+		mock.expects("get").once().returns(undefined);
 
 		var session = new Session;
 		assert.isUndefined(session.variant('experiment-1'));
-
-		stub.restore();
 	});
 
 	it('saves the variant to a cookie', () => {
-		var stub = sinon.stub(Cookie, 'set');
-		stub.returns(undefined);
+		var experiment = 'experiment-1';
+		var variant = 'variant-1';
+
+		var mock = sinon.mock(Cookie);
+		mock.expects("set").once().withArgs(experiment, variant);
 
 		var session = new Session;
-		session.setVariant('experiment-1', 'variant-1');
-
-		stub.restore();
+		session.setVariant(experiment, variant);
 	});
 
 })
