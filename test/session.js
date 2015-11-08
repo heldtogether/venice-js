@@ -21,4 +21,14 @@ describe("Session", () => {
 		stub.restore();
 	});
 
+	it('saves the variant to a cookie', () => {
+		var stub = sinon.stub(Cookie, 'set');
+		stub.returns(undefined);
+
+		var session = new Session;
+		session.setVariant('experiment-1', 'variant-1');
+
+		stub.restore();
+	});
+
 })
