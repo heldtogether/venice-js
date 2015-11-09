@@ -29,8 +29,13 @@ describe('Config', () => {
 	it('calls the factory for each of the rules', () => {
 		var factory = { create: function () {} };
 
+		var experiment = 'experiment-1';
+
 		var mock = sinon.mock(factory);
-		mock.expects('create').once().withArgs(definition['experiment-1']);
+		mock.expects('create').once().withArgs(
+			experiment,
+			definition[experiment]
+		);
 
 		var config = new Config(factory);
 		config.setDefintion(definition);

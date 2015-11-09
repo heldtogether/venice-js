@@ -12,7 +12,10 @@ export class Config {
 	rules() {
 		var rules = {};
 		for (var feature in this.definition) {
-			rules[feature] = this.factory.create(this.definition[feature]);
+			rules[feature] = this.factory.create(
+				feature,
+				this.definition[feature]
+			);
 		}
 		return rules;
 	}
