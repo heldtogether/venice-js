@@ -1,8 +1,8 @@
 {
-  "name": "variants",
+  "name": "venice",
   "version": "1.0.0",
   "description": "Multivariate test bed.",
-  "main": "variants.js",
+  "main": "venice.js",
   "scripts": {
     "test": "mocha --compilers js:babel/register",
     "watch-tests": "./node_modules/watch/cli.js 'npm test' -d -u",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:heldtogether/variants.git"
+    "url": "git@github.com:heldtogether/venice.git"
   },
   "author": "Josh Sephton",
   "license": "Apache",
   "bugs": {
-    "url": "https://github.com/heldtogether/variants/issues"
+    "url": "https://github.com/heldtogether/venice/issues"
   },
-  "homepage": "https://github.com/heldtogether/variants",
+  "homepage": "https://github.com/heldtogether/venice",
   "devDependencies": {
     "babel": "^5.8.26",
     "babelify": "^6.3.0",
