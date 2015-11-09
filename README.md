@@ -2,6 +2,10 @@
 
 A simple test bed for running multivariate tests. It only provides a way to query experiments and assigning users to a particular variant. You will need to use the manager throughout your code and manually provide the code for each of the variants.
 
+### Installation
+
+	npm install venice
+
 ## Config
 
 	{
