@@ -1,14 +1,15 @@
-import { Bucketer } from '../src/bucketer.js'
-import { Feature } from '../src/feature.js'
-import { Session } from '../src/session.js'
+import { Bucketer } from './bucketer.js'
+import { Feature } from './feature.js'
 
 export class Factory {
 
-	create(experiment, definition) {
-		var session = new Session;
+	constructor(session) {
+		this.session = session;
+	}
 
+	create(experiment, definition) {
 		var variants = definition['variants'];
-		var bucketer = new Bucketer(experiment, variants, session);
+		var bucketer = new Bucketer(experiment, variants, this.session);
 
 		var feature = new Feature(bucketer);
 		return feature;
