@@ -1,6 +1,6 @@
 {
   "name": "venice",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Multivariate test bed.",
   "main": "venice.js",
   "scripts": {
