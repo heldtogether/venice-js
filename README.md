@@ -17,6 +17,7 @@ A simple test bed for running multivariate tests. It only provides a way to quer
 
 ## Usage
 
+```javascript
 	var variants = require('variants');
 
 	var definition = {
@@ -71,3 +72,4 @@ A simple test bed for running multivariate tests. It only provides a way to quer
 		}
 
 	}
+```
