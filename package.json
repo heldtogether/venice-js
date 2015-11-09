@@ -1,8 +1,8 @@
 {
   "name": "variants",
-  "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "Multivariate test bed.",
+  "main": "variants.js",
   "scripts": {
     "test": "mocha --compilers js:babel/register",
     "watch-tests": "./node_modules/watch/cli.js 'npm test' -d -u",
