@@ -1,4 +1,4 @@
-# Venice - Multivariate Test Bed [![Build Status](https://travis-ci.org/heldtogether/variants.svg)](https://travis-ci.org/heldtogether/variants)
+# Venice - Multivariate Test Bed [![Build Status](https://travis-ci.org/heldtogether/venice.svg)](https://travis-ci.org/heldtogether/venice)
 
 A simple test bed for running multivariate tests. It only provides a way to query experiments and assigning users to a particular variant. You will need to use the manager throughout your code and manually provide the code for each of the variants.
 
