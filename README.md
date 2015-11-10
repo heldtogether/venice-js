@@ -1,4 +1,4 @@
-# Variants [![Build Status](https://travis-ci.org/heldtogether/variants.svg)](https://travis-ci.org/heldtogether/variants)
+# Venice - Multivariate Test Bed [![Build Status](https://travis-ci.org/heldtogether/variants.svg)](https://travis-ci.org/heldtogether/variants)
 
 A simple test bed for running multivariate tests. It only provides a way to query experiments and assigning users to a particular variant. You will need to use the manager throughout your code and manually provide the code for each of the variants.
 
@@ -22,7 +22,7 @@ A simple test bed for running multivariate tests. It only provides a way to quer
 ## Usage
 
 ```javascript
-	var variants = require('variants');
+	var venice = require('venice');
 
 	var definition = {
 		"experiment-1": {
@@ -34,31 +34,11 @@ A simple test bed for running multivariate tests. It only provides a way to quer
 		}
 	};
 
-	/** Create the Variants manager **/
-
-	// The session provided uses cookies by default.
-	// Create your own (or stub it out) to use outside
-	// of a browser.
-	//
-	// For example:
-	//
-	// var session = {
-	//     variant: function() {},
-	//     setVariant: function() {}
-	// };
-	var session = new variants.Session();
-
-	var factory = new variants.Factory(session);
-
-	var config = new variants.Config(factory);
-	config.setDefintion(definition);
-
-	var manager = new variants.Manager();
-	manager.addConfig(config);
+	var manager = venice.init(definition);
 
 	...
 
-	/** Use the Variants manager to alter the UI **/
+	/** Alter the functionality for an experiment **/
 
 	var experiment = manager.get('experiment-1');
 	if (experiment && experiment.active()) {
@@ -76,4 +56,27 @@ A simple test bed for running multivariate tests. It only provides a way to quer
 		}
 
 	}
+```
+
+The default `init` method will use cookies to persist the user's session. This makes it unsuitable for use in a CLI app. You can create your own session storage (e.g. in a database) and create an instance of the `manager`:
+
+```javascript
+	/** Create an instance of the manager **/
+
+	var session = {
+		variant: function() {
+			// query the database
+		},
+		setVariant: function() {
+			// write to database
+		}
+	};
+
+	var factory = new venice.Factory(session);
+
+	var config = new venice.Config(factory);
+	config.setDefintion(definition);
+
+	var manager = new venice.Manager();
+	manager.addConfig(config);
 ```
