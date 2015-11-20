@@ -7,7 +7,7 @@ export class Session {
 	}
 
 	setVariant(experiment, variant) {
-		Cookie.set(experiment, variant);
+		Cookie.set(experiment, variant, { expires: 365 });
 	}
 
 }

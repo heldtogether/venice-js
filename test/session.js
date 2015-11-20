@@ -24,9 +24,12 @@ describe('Session', () => {
 	it('saves the variant to a cookie', () => {
 		var experiment = 'experiment-1';
 		var variant = 'variant-1';
+		var options = {
+			expires: 365
+		};
 
 		var mock = sinon.mock(Cookie);
-		mock.expects('set').once().withArgs(experiment, variant);
+		mock.expects('set').once().withArgs(experiment, variant, options);
 
 		var session = new Session;
 		session.setVariant(experiment, variant);
