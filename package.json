@@ -13,7 +13,7 @@
     "url": "git@github.com:heldtogether/venice-js.git"
   },
   "author": "Josh Sephton",
-  "license": "Apache",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/heldtogether/venice-js/issues"
   },
