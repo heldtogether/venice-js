@@ -1,7 +1,7 @@
 {
   "name": "venice",
   "version": "1.1.2",
-  "description": "Multivariate test bed.",
+  "description": "Javascript multivariate test bed. Run A/B tests on functionality in your Javascript.",
   "main": "venice.js",
   "scripts": {
     "test": "mocha --compilers js:babel/register",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:heldtogether/venice.git"
+    "url": "git@github.com:heldtogether/venice-js.git"
   },
   "author": "Josh Sephton",
   "license": "Apache",
   "bugs": {
-    "url": "https://github.com/heldtogether/venice/issues"
+    "url": "https://github.com/heldtogether/venice-js/issues"
   },
-  "homepage": "https://github.com/heldtogether/venice",
+  "homepage": "https://github.com/heldtogether/venice-js",
   "devDependencies": {
     "babel": "^5.8.26",
     "babelify": "^6.3.0",
